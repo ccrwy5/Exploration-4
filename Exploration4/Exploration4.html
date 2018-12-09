@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Exploration 4</title>
+    <meta name="viewport" content="initial-scale=1.0">
+    <meta charset="utf-8">
+      
+    <style>
+      /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+      #map {
+        height: 75%;
+          width: 75%;
+         
+      }
+      /* Optional: Makes the sample page fill the window. */
+      html, body {
+        height: 100%;
+        margin: 10;
+        padding: 10;
+      }
+        
+    body{
+        background-image: url("background.jpg");
+        color: white;
+        text-align: center;  
+    }
+        
+    .center-div{
+         margin: 0 auto;
+         width: 100px; 
+    }
+        
+    </style>
+  </head>
+  <body>
+      
+    <h1>Chris Rehagen - Exploration 4</h1>  
+      
+    <p>For my exploration, I decided to look into using different APIs based on several job/internship listings mentioning that experience using APIs could be useful/preferred</p>
+      
+    <br>
+      
+    <p>I decided to look into Google APIs since their documentation and tutorials are pretty straight forward (at least what I could tell) and they're pretty useful across the board. I decided to use the maps API because I've seen it used in several other websites, often using them to show the location of their place of business or something along those lines.</p>
+      
+      
+    <div id="map" class="center-div"></div>
+      
+    <script>
+      var map;
+      function initMap() {
+        
+        var jesseHall = {lat: 38.945233900000005, lng: -92.32868715488362};
+  
+        var map = new google.maps.Map(
+            document.getElementById('map'), {zoom: 8, center: jesseHall});
+            var marker = new google.maps.Marker({position: jesseHall, map: map});
+        
+        }
+        
+    </script>
+      
+     
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDrwCaGLQDFHREnw-t5eVV-KyvW0JcsU7Q&callback=initMap"
+    async defer></script>
+      
+      
+    <p>I decided to keep it relatively simple and have it center on Jesse Hall. The coordinates can be entered/modified in the code. When you change the coordinates, the marker also auto-updates. The user can edit the coordinates in the developer tools menu, as well</p>  
+
+    <br><br><br><br>
+      
+  </body>
+</html>
